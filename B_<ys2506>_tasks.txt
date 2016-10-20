@@ -1,8 +1,47 @@
 How many files are there?      17
 How many .csv files? How many .py files?  10   6
 How many words and lines are in each csv file?
+0:  1018 1018
+1:  1018 1018
+2:  1018 1018
+3:  1017 1017
+4:  1023 1019
+5:  1017 1017
+6:  1017 1017
+7:  1017 1017
+8:  1017 1017
+9:  1017 1017
 Have a look at file client.py. Hint: cat or less
+import sys
+import time
+import random
+
+def receive():
+    msg = ''
+    while '<EOM>' not in msg:
+        chunk = s.recv(1024)
+        if not chunk: break
+        if chunk == '':
+            raise RuntimeError("socket connection broken")
+        msg += chunk
+    msg = msg[:-5]
+    return msg
+
+if __name__ == "__main__":
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(('127.0.0.1', int(sys.argv[1])))
+    print receive()
+    s.send(str(sys.argv[2]))
+    print receive()
+    while(1):
+        s.send(str(random.randint(0, 4)))
+        inc = receive()
+        if not inc:
+            break
+        print inc
+ #       time.sleep(1)
 In this file a function receive() is defined. Find where that function is mentioned in .py files.
+
 Just show the names of files containing matches. 
 Show occurrences with line number.
 Look at a .csv file to see what it looks like. 
