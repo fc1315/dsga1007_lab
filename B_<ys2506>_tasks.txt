@@ -1,0 +1,11 @@
+How many files are there?      17
+How many .csv files? How many .py files?  10   6
+How many words and lines are in each csv file?
+Have a look at file client.py. Hint: cat or less
+In this file a function receive() is defined. Find where that function is mentioned in .py files.
+Just show the names of files containing matches. 
+Show occurrences with line number.
+Look at a .csv file to see what it looks like. 
+Print the first 3 lines of each csv file.
+Print the last couple of lines of each csv file.
+Do some of the .csv files contain the words foo or bar (in any capitalization)?
